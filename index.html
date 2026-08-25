@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080712">
+  <title>MINES V3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <b>💎 MINES <i>V3</i></b>
+
+  <div>
+    SALDO
+    <strong id="balance">R$ 0,00</strong>
+  </div>
+
+  <button id="openDeposit" type="button">+</button>
+</header>
+
+<main>
+
+  <section class="hero">
+    <small>AMBIENTE DE TESTE</small>
+    <h1>MINES <i>V3</i></h1>
+    <p>Encontre os diamantes e evite as minas.</p>
+  </section>
+
+  <section class="controls">
+
+    <div>
+      <label>VALOR DA APOSTA</label>
+
+      <p>
+        <button id="minus" type="button">−</button>
+        <strong id="bet">R$ 1,00</strong>
+        <button id="plus" type="button">+</button>
+      </p>
+    </div>
+
+    <div>
+      <label>QUANTIDADE DE MINAS</label>
+
+      <select id="mineCount">
+        <option value="3">3</option>
+        <option value="5" selected>5</option>
+        <option value="7">7</option>
+        <option value="10">10</option>
+      </select>
+    </div>
+
+  </section>
+
+  <section class="stats">
+
+    <div>
+      <span>PRÊMIO ATUAL</span>
+      <strong id="prize">R$ 1,24</strong>
+    </div>
+
+    <div>
+      <span>MULTIPLICADOR</span>
+      <strong id="multiplier">1,24x</strong>
+    </div>
+
+  </section>
+
+  <section id="board" aria-label="Tabuleiro do Mines"></section>
+
+  <section class="actions">
+    <button class="primary" id="start" type="button">
+      💰 DEPOSITAR PARA JOGAR
+    </button>
+
+    <button class="cashout" id="cashout" type="button" disabled>
+      ⇧ RESGATAR
+    </button>
+  </section>
+
+  <p id="message" class="notice">
+    Faça um depósito de teste para começar uma partida.
+  </p>
+
+  <h2>ÚLTIMAS PARTIDAS</h2>
+
+  <section id="history"></section>
+
+</main>
+
+<!-- MODAL DE DEPÓSITO DE TESTE -->
+<div class="modal hidden" id="depositModal">
+
+  <div class="card">
+
+    <button class="close" id="closeDeposit" type="button">×</button>
+
+    <h2>DEPOSITAR VIA PIX</h2>
+
+    <p>
+      Ambiente de teste. Nenhum pagamento real será processado.
+    </p>
+
+    <div class="amounts">
+      <button type="button" data-v="10">R$ 10</button>
+      <button type="button" data-v="20">R$ 20</button>
+      <button type="button" data-v="50">R$ 50</button>
+      <button type="button" data-v="100">R$ 100</button>
+    </div>
+
+    <input
+      id="customAmount"
+      type="number"
+      min="1"
+      step="0.01"
+      placeholder="Outro valor"
+    >
+
+    <div class="fakepix">
+      ▦
+      <code>TESTE-PIX-MINES-V3</code>
+    </div>
+
+    <button class="primary full" id="simulate" type="button">
+      ✓ SIMULAR PAGAMENTO APROVADO
+    </button>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
