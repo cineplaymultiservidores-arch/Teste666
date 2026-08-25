@@ -1,0 +1,113 @@
+/* MINES V3 — interface */
+*{box-sizing:border-box}
+:root{
+  --bg:#070712;--panel:#0e0c1b;--panel2:#121025;
+  --line:#302657;--purple:#8b32ff;--purple2:#b026ff;
+  --green:#55e9c1;--red:#ff5d76;--text:#fff;--muted:#aaa;
+}
+body{
+  margin:0;background:radial-gradient(circle at 50% -10%,#21113b 0,#070712 45%);
+  color:var(--text);font-family:Arial,Helvetica,sans-serif;min-height:100vh;
+}
+button,select,input{font:inherit}
+button{cursor:pointer;color:#fff}
+header{
+  height:70px;padding:12px 18px;display:flex;align-items:center;gap:12px;
+  border-bottom:1px solid #282044;background:#090912ee;position:sticky;top:0;z-index:10;
+  backdrop-filter:blur(12px)
+}
+header>b{font-size:21px;flex:1}
+header b i,h1 i{color:#a855f7;font-style:normal}
+header>div{
+  font-size:10px;color:#aaa;padding:7px 12px;border:1px solid var(--line);
+  border-radius:10px;background:#0d0b18
+}
+header strong{display:block;color:var(--green);font-size:15px;margin-top:3px}
+header>button{
+  width:40px;height:40px;border:0;border-radius:10px;background:var(--purple);font-size:24px
+}
+main{max-width:700px;width:94%;margin:auto;padding:22px 0 50px}
+.hero,.controls>div,.stats>div{
+  background:linear-gradient(145deg,#111020,#0c0a16);
+  border:1px solid var(--line);border-radius:17px;padding:20px;
+  box-shadow:0 12px 35px #0005
+}
+.hero small{color:#c084fc;font-weight:700;letter-spacing:1px}
+.hero h1{font-size:42px;margin:15px 0 6px}
+.hero p{color:var(--muted);margin:0}
+.controls,.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+label,span{display:block;color:var(--muted);font-size:10px;margin-bottom:8px}
+.controls p{display:flex;align-items:center;justify-content:space-between;margin:0;gap:10px}
+.controls button{
+  background:#7129d8;border:0;border-radius:8px;width:36px;height:36px;font-size:20px
+}
+.controls strong{font-size:16px}
+select,input{
+  width:100%;background:#111022;color:#fff;border:1px solid #44366d;
+  border-radius:9px;padding:10px;outline:none
+}
+.stats>div{padding:15px}
+.stats strong{font-size:20px;color:var(--green)}
+.stats>div:last-child strong{color:#bd7cff}
+#board{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:12px;
+  padding:10px;background:#0a0913;border:1px solid #211b39;border-radius:17px
+}
+.cell{
+  aspect-ratio:1;background:linear-gradient(145deg,#121025,#0b0a15);
+  border:1px solid #49358b;border-radius:10px;font-size:25px;color:#3d356b;
+  transition:.15s transform,.15s background,.15s border-color;
+}
+.cell:hover:not(.open){transform:translateY(-2px);border-color:#9b5cff;background:#17132a}
+.cell.open{cursor:default}
+.cell.gem{background:#10302b;border-color:#267c68;color:var(--green)}
+.cell.mine{background:#35151e;border-color:#8e2d43;color:var(--red)}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.actions button,.full{
+  padding:15px;border-radius:11px;font-weight:800;border:0
+}
+.primary{background:linear-gradient(135deg,#762cff,#b026ff);box-shadow:0 8px 25px #812cff33}
+.cashout{background:#0c211d;color:var(--green);border:1px solid #1c5948!important}
+.cashout:disabled{opacity:.4;cursor:not-allowed}
+.notice{
+  padding:12px;background:#0d0c18;border:1px solid #29234a;
+  border-radius:10px;color:#aaa;font-size:13px;text-align:center
+}
+h2{font-size:15px;margin:22px 0 8px}
+.row{
+  padding:11px 4px;border-bottom:1px solid #211d35;display:flex;justify-content:space-between
+}
+.win{color:var(--green)}.loss{color:var(--red)}
+.modal{
+  position:fixed;inset:0;background:#000c;display:grid;place-items:center;
+  padding:18px;z-index:20
+}
+.hidden{display:none}
+.card{
+  width:min(500px,100%);background:#0d0b18;border:1px solid #49358c;
+  border-radius:18px;padding:22px;position:relative;box-shadow:0 20px 70px #000
+}
+.close{
+  position:absolute;right:12px;top:8px;background:none;border:0;
+  font-size:28px;color:#aaa
+}
+.amounts{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:15px 0}
+.amounts button{
+  background:#121025;border:1px solid #44366d;padding:11px;border-radius:8px
+}
+.amounts button:hover{border-color:#9b5cff;background:#19152b}
+.card input{margin-bottom:12px}
+.fakepix{
+  min-height:100px;border:1px dashed #654ca8;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;gap:15px;
+  font-size:54px;margin-bottom:12px;background:#0a0913
+}
+.fakepix code{font-size:11px;color:#c7bddc}
+.full{width:100%}
+@media(max-width:520px){
+  .controls,.stats,.actions{grid-template-columns:1fr}
+  .hero h1{font-size:34px}
+  .amounts{grid-template-columns:1fr 1fr}
+  #board{gap:5px;padding:7px}
+  .cell{font-size:20px}
+}

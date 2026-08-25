@@ -1,0 +1,13 @@
+{
+  "name": "mines-v3-teste",
+  "version": "1.0.0",
+  "description": "Mines V3 em ambiente de teste",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 180">
+<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#762cff"/><stop offset="1" stop-color="#b026ff"/></linearGradient></defs>
+<rect width="600" height="180" rx="32" fill="#0b0915"/>
+<text x="40" y="112" font-family="Arial,sans-serif" font-size="72" font-weight="900" fill="white">MINES</text>
+<text x="330" y="112" font-family="Arial,sans-serif" font-size="72" font-weight="900" fill="url(#g)">V3</text>
+<path d="M470 35l12 24 27 4-20 19 5 27-24-13-24 13 5-27-20-19 27-4z" fill="#55e9c1"/>
+</svg>
